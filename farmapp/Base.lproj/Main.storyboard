@@ -15,42 +15,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HOY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Km-s5-Clc">
-                                <rect key="frame" x="68" y="116" width="272" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Farmacia De Turno" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGn-k5-uGh">
-                                <rect key="frame" x="56" y="255" width="295" height="68"/>
+                                <rect key="frame" x="60" y="439" width="295" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ylk-HX-A6H">
+                                <rect key="frame" x="60" y="155" width="295" height="237"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Direccion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgB-nr-C7D">
-                                <rect key="frame" x="17" y="402" width="374" height="47"/>
+                                <rect key="frame" x="20" y="547" width="374" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzp-7z-rzO">
-                                <rect key="frame" x="170" y="565" width="67" height="30"/>
+                                <rect key="frame" x="174" y="627" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Ir al Mapa"/>
                                 <connections>
-                                    <segue destination="gKr-D2-jqG" kind="modal" identifier="MapSegue" id="Wn3-Sm-xbX"/>
+                                    <segue destination="gKr-D2-jqG" kind="presentation" identifier="MapSegue" id="Wn3-Sm-xbX"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ss8-jG-cUg"/>
+                    <navigationItem key="navigationItem" id="ss8-jG-cUg">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="phone.fill.arrow.up.right" catalog="system" id="XvS-qu-a7T">
+                            <connections>
+                                <action selector="callPhoneFarmacia:" destination="9pv-A4-QxB" id="Xaj-nS-I7z"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="paperplane.fill" catalog="system" id="r6L-aE-Kp0">
+                            <connections>
+                                <action selector="sendMessage:" destination="9pv-A4-QxB" id="yPQ-Xd-woh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="btnVerEnMapa" destination="Vzp-7z-rzO" id="egI-p3-aew"/>
+                        <outlet property="imageView" destination="Ylk-HX-A6H" id="kbz-2z-bR7"/>
                         <outlet property="lblDireccion" destination="qgB-nr-C7D" id="mK6-98-Iil"/>
                         <outlet property="lblFarmaciaDeTurno" destination="cGn-k5-uGh" id="pjg-T3-Zoc"/>
                     </connections>
@@ -71,16 +80,30 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpt-xL-H9i">
+                                <rect key="frame" x="318" y="51" width="83" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Cerrar"/>
+                                <connections>
+                                    <action selector="close:" destination="gKr-D2-jqG" eventType="touchUpInside" id="1JB-RY-gRW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="zOI-qT-Qmg"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8Mt-xC-hoy"/>
+                    <connections>
+                        <outlet property="btnCerrar" destination="Hpt-xL-H9i" id="0tY-ZF-LxL"/>
+                        <outlet property="mapView" destination="dfU-7D-gPH" id="0En-eb-RMR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FD9-y6-m1C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2498.5507246376815" y="-320.08928571428572"/>
         </scene>
-        <!--Second-->
+        <!--Calendario-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="farmapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,16 +132,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Calendario" image="calendar.circle.fill" catalog="system" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="MainViewController" customModule="farmapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -133,11 +156,11 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--First-->
+        <!--Navigation Controller-->
         <scene sceneID="ai5-Mf-fkY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6De-Nt-kWy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="" image="first" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GZ4-Ws-mgR">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -154,7 +177,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="calendar.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="first" width="25" height="25"/>
+        <image name="paperplane.fill" catalog="system" width="128" height="121"/>
+        <image name="phone.fill.arrow.up.right" catalog="system" width="128" height="115"/>
     </resources>
 </document>

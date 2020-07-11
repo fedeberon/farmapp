@@ -10,11 +10,12 @@ import UIKit
 
 struct Farmacia: Codable {
 
-    let name: String?
-    let img: String?
-    let lat: String?
-    let lng: String?
-    let address: String?
+    var name: String?
+    var img: String?
+    var lat: Double?
+    var lng: Double?
+    var address: String?
+    var phoneNumber: String?
     
     enum CodingKeys: String, CodingKey {
         case name
@@ -22,6 +23,7 @@ struct Farmacia: Codable {
         case lat
         case lng
         case address
+        case phoneNumber
     }
 }
 

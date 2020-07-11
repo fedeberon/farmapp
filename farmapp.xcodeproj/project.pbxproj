@@ -370,7 +370,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4AD7FE96B6BD6AAD68744792 /* Pods-farmapp.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FH222P96KV;
 				INFOPLIST_FILE = farmapp/Info.plist;
@@ -389,7 +389,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 29BCFD4D3DFDD253C0B8A823 /* Pods-farmapp.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FH222P96KV;
 				INFOPLIST_FILE = farmapp/Info.plist;

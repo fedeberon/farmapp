@@ -7,24 +7,38 @@
 //
 
 import UIKit
-
+import MapKit
 class MapViewController: UIViewController {
-
+    @IBOutlet weak var mapView: MKMapView!
+    
+    
+    @IBOutlet weak var btnCerrar: UIButton!
+    var farmacia: Farmacia!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let appleWQ = CLLocation(latitude: farmacia.lat!, longitude: farmacia.lng!)
+        let regionRadius: CLLocationDistance = 1000.0
+        let region = MKCoordinateRegion(center: appleWQ.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        mapView.setRegion(region, animated: true)
+        mapView.delegate = self
+        
+        let annotation = MKPointAnnotation()
+        annotation.title = farmacia.name
+        //You can also add a subtitle that displays under the annotation such as
+        annotation.subtitle = farmacia.address
+        annotation.coordinate = appleWQ.coordinate
+        mapView.addAnnotation(annotation)
+    }
+     
+    @IBAction func close(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension MapViewController: MKMapViewDelegate {
+    func mapViewWillStartRenderingMap(_ mapView: MKMapView) {
+        print("redenring")
     }
-    */
-
 }
