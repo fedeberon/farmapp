@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		92B806F45FE3B44C338878AB /* Pods_farmapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DA86627E18AFB63EA239FB /* Pods_farmapp.framework */; };
+		AA195BEC24B9F95C005DC61C /* CalendarioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA195BEB24B9F95C005DC61C /* CalendarioTableViewController.swift */; };
+		AA195BEE24B9FB1D005DC61C /* Lista.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA195BED24B9FB1D005DC61C /* Lista.swift */; };
 		AA1FF70324B731FE00F3DA6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA1FF70224B731FE00F3DA6C /* GoogleService-Info.plist */; };
 		AA1FF70A24B7E94800F3DA6C /* Farmacia.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1FF70924B7E94800F3DA6C /* Farmacia.swift */; };
 		AA5840EB24B6794E001683B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5840EA24B6794E001683B7 /* AppDelegate.swift */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		29BCFD4D3DFDD253C0B8A823 /* Pods-farmapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-farmapp.release.xcconfig"; path = "Target Support Files/Pods-farmapp/Pods-farmapp.release.xcconfig"; sourceTree = "<group>"; };
 		4AD7FE96B6BD6AAD68744792 /* Pods-farmapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-farmapp.debug.xcconfig"; path = "Target Support Files/Pods-farmapp/Pods-farmapp.debug.xcconfig"; sourceTree = "<group>"; };
+		AA195BEB24B9F95C005DC61C /* CalendarioTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarioTableViewController.swift; sourceTree = "<group>"; };
+		AA195BED24B9FB1D005DC61C /* Lista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lista.swift; sourceTree = "<group>"; };
 		AA1FF70224B731FE00F3DA6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA1FF70424B7354800F3DA6C /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppIcon.appiconset; path = ../../Desktop/iOS/AppIcon.appiconset; sourceTree = "<group>"; };
 		AA1FF70924B7E94800F3DA6C /* Farmacia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Farmacia.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				AA5840FA24B67954001683B7 /* Info.plist */,
 				AA1FF70924B7E94800F3DA6C /* Farmacia.swift */,
 				AAFF441024B8985C0095B0E4 /* MapViewController.swift */,
+				AA195BEB24B9F95C005DC61C /* CalendarioTableViewController.swift */,
+				AA195BED24B9FB1D005DC61C /* Lista.swift */,
 			);
 			path = farmapp;
 			sourceTree = "<group>";
@@ -226,7 +232,9 @@
 				AA5840EF24B6794E001683B7 /* FirstViewController.swift in Sources */,
 				AA5840EB24B6794E001683B7 /* AppDelegate.swift in Sources */,
 				AA1FF70A24B7E94800F3DA6C /* Farmacia.swift in Sources */,
+				AA195BEE24B9FB1D005DC61C /* Lista.swift in Sources */,
 				AA5840ED24B6794E001683B7 /* SceneDelegate.swift in Sources */,
+				AA195BEC24B9F95C005DC61C /* CalendarioTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
