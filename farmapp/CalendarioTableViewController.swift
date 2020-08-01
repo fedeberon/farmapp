@@ -18,6 +18,7 @@ class CalendarioTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.rowHeight = 150
         
         let today = Date()
                self.view.backgroundColor = UIColor.gray
@@ -81,7 +82,7 @@ class CalendarioTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,8 +92,13 @@ class CalendarioTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
-      cell.textLabel?.text = farmacias[indexPath.section][indexPath.row].name
+      let cell = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath) as! CustomTableViewCell
+        cell.lblName.textColor = UIColor.black
+        cell.lblAddress.textColor = UIColor.black
+      cell.lblName.text = farmacias[indexPath.row].name
+      cell.lblAddress.text = farmacias[indexPath.row].address
+      let url = URL(string: farmacias[indexPath.row].img!)
+      cell.imgLogo.load(url: url!)
         
       return cell
     }
@@ -144,3 +150,4 @@ class CalendarioTableViewController: UITableViewController {
     */
 
 }
+ 
