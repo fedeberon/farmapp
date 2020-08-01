@@ -111,14 +111,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="106" y="426.5" width="202" height="43"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="Software Factory" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
+                                <rect key="frame" x="10" y="427" width="394" height="220"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="99.5" y="477.5" width="215" height="17"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="W7Z-8s-4Ub">
+                                <rect key="frame" x="49" y="120" width="311" height="206"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bolivar - Buenos Aires" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
+                                <rect key="frame" x="133" y="582" width="143" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -133,12 +138,15 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Info" image="info.circle" catalog="system" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="ideaas" destination="W7Z-8s-4Ub" id="dL3-1Y-7Zt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="697" y="727"/>
+            <point key="canvasLocation" x="695.6521739130435" y="726.5625"/>
         </scene>
-        <!--Calendario-->
+        <!--Proximos Turnos-->
         <scene sceneID="wCW-Oe-nK4">
             <objects>
                 <tableViewController id="s8O-6w-DTX" customClass="CalendarioTableViewController" customModule="farmapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -204,7 +212,7 @@
                             <outlet property="delegate" destination="s8O-6w-DTX" id="mGC-6T-a6Q"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Calendario" image="calendar" catalog="system" id="7ks-7X-bPX"/>
+                    <tabBarItem key="tabBarItem" title="Proximos Turnos" image="calendar" catalog="system" id="7ks-7X-bPX"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3rM-VT-UvH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -253,6 +261,7 @@
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="first" width="25" height="25"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="logo" width="962" height="220"/>
         <image name="paperplane.fill" catalog="system" width="128" height="121"/>
         <image name="phone.fill.arrow.up.right" catalog="system" width="128" height="115"/>
     </resources>
