@@ -16,6 +16,7 @@ struct Farmacia: Codable {
     var lng: Double?
     var address: String?
     var phoneNumber: String?
+    var date: String?
     
     enum CodingKeys: String, CodingKey {
         case name

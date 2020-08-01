@@ -18,17 +18,17 @@ class CalendarioTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.rowHeight = 150
-        
+        self.tableView.rowHeight = 170
+ 
         let today = Date()
-               self.view.backgroundColor = UIColor.gray
+               self.view.backgroundColor = UIColor.white
             
                let db = Firestore.firestore()
                formatter.dateFormat = "MMMM d, yyyy"
                let result = formatter.string(from: today)
                formatter.dateFormat = "MMMM d, yyyy HH:mm:ss"
                let startDate = result + " " + "07:00:00"
-               
+               formatter.locale = Locale(identifier: "es")
                let startTime: Date = formatter.date(from: startDate) ?? Date(timeIntervalSince1970: 0)
                let startTimestamp: Timestamp = Timestamp(date: startTime)
 
@@ -43,9 +43,11 @@ class CalendarioTableViewController: UITableViewController {
                         for document in querySnapshot!.documents {
                             print("\(document.documentID) => \(document.data())")
                             let doc = document.get("farmacia") as? DocumentReference
-                            self.addPharmacy(docuemntReference: doc!)
-                            
-                        }
+                            let fecha = document.get("fecha") as? Date
+                            self.formatter.dateFormat = "d MMMM, yyyy"
+                            let dateAsString = self.formatter.string(from: fecha!)
+                            self.addPharmacy(docuemntReference: doc!, date: dateAsString)
+                                                    }
                     }
                 
                }
@@ -58,7 +60,7 @@ class CalendarioTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    public func addPharmacy(docuemntReference value: DocumentReference) {
+    public func addPharmacy(docuemntReference value: DocumentReference, date dateDuty: String) {
          var farmacia: Farmacia = Farmacia()
           value.getDocument { (document, error) in
           if let document = document {
@@ -68,6 +70,7 @@ class CalendarioTableViewController: UITableViewController {
                               farmacia.lat = point.latitude
                               farmacia.lng = point.longitude
                          }
+              farmacia.date = dateDuty
               self.farmacias.append(farmacia)
               self.tableView.reloadData()
               print("farmacia: \(farmacia)")
@@ -93,17 +96,22 @@ class CalendarioTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath) as! CustomTableViewCell
-        cell.lblName.textColor = UIColor.black
-        cell.lblAddress.textColor = UIColor.black
+      cell.lblName.textColor = UIColor.black
+      cell.lblAddress.textColor = UIColor.black
+        cell.date.textColor = UIColor.black
       cell.lblName.text = farmacias[indexPath.row].name
       cell.lblAddress.text = farmacias[indexPath.row].address
+      cell.date.text = farmacias[indexPath.row].date
       let url = URL(string: farmacias[indexPath.row].img!)
       cell.imgLogo.load(url: url!)
         
       return cell
     }
     
-
+  
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        //cell.backgroundColor = UIColor.clear
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

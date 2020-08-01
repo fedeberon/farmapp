@@ -15,5 +15,6 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var lblName: UILabel!
     
     @IBOutlet weak var lblAddress: UILabel!
-     
+    @IBOutlet weak var date: UILabel!
+    
 }
